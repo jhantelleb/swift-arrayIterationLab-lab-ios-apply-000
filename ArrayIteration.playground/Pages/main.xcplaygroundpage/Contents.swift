@@ -15,8 +15,7 @@
  */
 // write your code here
 
-
-
+var shoppingCart: [String] = ["Chips", "Salsa", "Guacamole", "Red wine" ]
 
 
 
@@ -25,7 +24,7 @@
  */
 // write your code here
 
-
+var list: [Int] = [1,2,3,4,5,6,7,8,9,10]
 
 
 
@@ -37,9 +36,9 @@
 // write your code here
 
 
-
-
-
+for number in list {
+    print(number)
+}
 
 
 /*: question4
@@ -47,11 +46,9 @@
  */
 // write your code here
 
-
-
-
-
-
+for item in shoppingCart{
+    print("Let's buy \(item)!")
+}
 
 /*: question5
  ### 5. Take the list of shopping cart items you created in question 1 and print their values by passing each item in list to a function to be printed.
@@ -59,10 +56,14 @@
 // write your code here
 
 
+func printList(list:[String]){
+    for item in list{
+     print(item)
+    }
+}
 
 
-
-
+printList(shoppingCart)
 
 /*: question6
  ### 4. Create a function that takes an array of names and greets each person with the following message "Good morning x" <- x being the individuals name. One caveat. If the persons first name is Michael, we want to greet them with the message, "Top of the morning Michael!".
@@ -71,9 +72,17 @@
 
 
 
+func greetings(person:[String]){
+    for name in person{
+        if name == "Michael"{
+            print("Top of the morning Michael!")
+        }
+        print("Good morning \(name)")
+    }
+}
 
-
-
+//var people = ["Earl", "LJ", "Jhantelle", "Jessica", "Michael"]
+//greetings(people)
 /*: question7
  ### 7. Create a function that takes an array of Ints (40, 60, 50, 52, 59, 13, 90, 100, 5, 52, 51, 49) and returns an array of Ints. This function should look through the array of Ints and create a new array of Ints that only contain integers less than 50.
  */
@@ -81,8 +90,18 @@
 
 
 
+func lessThan50( arrayOfInts:[Int] ) -> [Int] {
+    var returnArray: [Int] = []
+    
+    for number in arrayOfInts{
+        if number < 50{
+           returnArray.append(number)
+        }
+    }
+    return returnArray
+}
 
+var checkNumbers = [40, 60, 50, 52, 59, 13, 90, 100, 5, 52, 51, 49]
 
-
-
+//print(lessThan50(checkNumbers))
 
